@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v3.8.5">
-    <title>JeanPy · Dev</title>
+    <title>{{ blog.title }}</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
 
@@ -44,7 +44,7 @@
             <a class="nav-item nav-link" href="https://github.com/JeanFerreira91">GitHub</a>
             <a class="nav-item nav-link" href="https://twitter.com/DeveloperJeanpy">Twitter</a>
             <a class="nav-item nav-link" href="https://www.instagram.com/jeanpy.dev/">Instagram</a>
-            <a class="nav-item nav-link" href="{% url 'allblogs' %}">Blog</a>
+            <a class="nav-item nav-link active" href="{% url 'allblogs' %}">Blog</a>
           </div>
         </div>
       </nav>
@@ -52,36 +52,16 @@
 
 <main role="main">
 
-  <section class="jumbotron text-center">
-    <div class="container">
-      <h1 class="jumbotron-heading">Welcome to JeanPy Dev</h1>
-      <p class="lead text-muted">My name is Jean and this is my Portfolio site. Below you will find some of my projects. Also, you can visit my Blog for some Python news.</p>
-      <p>
-        <a href="/blog" class="btn btn-primary my-2">Go to Blog</a>
-      </p>
-      <img src="{% static 'profile-pic.png' %}" height="250" />
-    </div>
-  </section>
-
-  <div class="album py-5 bg-light">
     <div class="container">
 
-      <div class="row">
+        <h1 class="text-center pt-3">{{ blog.title }}</h1>
+        <p class="text-center">{{ blog.pub_date }}</p>
+        <img class="img-fluid" src="{{ blog.image.url }}" />
+        <br />
+        <hr />
+        <p>{{ blog.body }}</p>
 
-        {% for job in jobs.all %}
-        <div class="col-md-4">
-          <div class="card mb-4 shadow-sm">
-            <img class="card-img-top" src="{{ job.image.url }}" />
-            <div class="card-body">
-              <p class="card-text">{{ job.summary }}</p>
-            </div>
-          </div>
-        </div>
-        {% endfor %}
-
-      </div>
     </div>
-  </div>
 
 </main>
 
