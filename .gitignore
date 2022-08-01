@@ -1,12 +1,22 @@
-# Created by https://www.gitignore.io/api/django
-# Edit at https://www.gitignore.io/?templates=django
-
-### Django ###
-*.log
-*.pot
-*.pyc
+# Byte-compiled / optimized / DLL files
 __pycache__/
+*.py[cod]
+*$py.class
+
+db.sqlite3
+../venv/
+env/
+venv/
+Portfolio2022/__pycache__
+.env
+.venv
+# static/
+staticfiles/
+data/
+# Django stuff:
+*.log
 local_settings.py
 db.sqlite3
-/media
-/static
+db.sqlite3-journal
+
+# Custom made:
